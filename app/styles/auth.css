@@ -1,0 +1,290 @@
+.auth-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message {
+    color: rgb(208, 70, 70);
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.login-signup {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 3%;
+    gap: 25px;
+    width: 45%;
+    background-color: #E6F0ED;
+}
+
+#auth-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#auth-nav a {
+    text-decoration: none;
+    width: 50%;
+    padding: 2%;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0%;
+}
+
+#auth-nav a:hover,
+#auth-nav a.active {
+    color: white;
+    background-color: #1CB0F6;
+}
+
+#auth-options {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+}
+
+#auth-options li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#auth-options li a {
+    text-decoration: none;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    padding: 2%;
+}
+
+#auth-options li a span {
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#auth-options li a:hover {
+    cursor: pointer;
+    background-color: rgb(242, 232, 232);
+}
+
+#auth-options p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 3%;
+    gap: 5vh;
+    width: 45%;
+    background-color: #E6F0ED;
+}
+
+#phone-num-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+#phone-num-form h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: right;
+    color: #1A384B;
+}
+
+#username {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#username input {
+    border: solid 1px #b4b1b1;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: white;
+}
+
+#username input,
+#username label {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: right;
+    vertical-align: middle;
+    color: #383838;
+    margin: 0;
+}
+
+.firstName,
+.lastName {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#phone-num-form button {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    border-bottom: solid 6px #0A8D56;
+    padding: 10px;
+    background-color: #0EBE74;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#phone-num-form button:hover {
+    cursor: pointer;
+    border-bottom: solid 3px #0A8D56;
+}
+
+.phone-number {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.phone-number label {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: right;
+    vertical-align: middle;
+    color: #383838;
+}
+
+#back {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0%;
+    color: #1999D6;
+}
+
+.phone-number .react-tel-input {
+    display: flex !important;
+    flex-direction: row !important;
+    direction: ltr !important;
+    margin: 0 !important;
+    align-items: center;
+    gap: 13px;
+    border: solid 1px #E5E5E5;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    vertical-align: middle;
+    color: #383838;
+    padding: 10px;
+}
+
+.phone-number .flag-dropdown {
+    order: 1;
+    background-color: #F5F6F7 !important;
+}
+
+.phone-number .selected-flag {
+    background-color: #F5F6F7 !important;
+    margin-left: 0 !important;
+}
+
+.fav_character {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#gender-selector {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#gender-selector label {
+    width: 45%;
+    height: 18vh;
+    border: solid 1px #E5E5E5;
+    border-bottom: 6px;
+    padding: 2%;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gender-selector label img {
+    transform: scale(0.6);
+}
+
+#gender-selector input[type="radio"] {
+    display: none;
+}
+
+#gender-selector label:has(input[type="radio"]:checked), #gender-selector label:hover {
+    cursor: pointer;
+    background-color: #DDF4FF;
+    border-color: #1CB0F6;
+}
+
+
+@media (max-width: 768px) {
+    .auth-page {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .login-signup {
+        width: 100%;
+        padding: 5%;
+    }
+
+    .login-signup {
+        gap: 20px;
+    }
+
+    #auth-options li a span,
+    #auth-options p {
+        font-size: 3vw;
+        padding: 3%;
+    }
+
+    #auth-nav a {
+        font-size: 3vw;
+        padding: 3%;
+    }
+}
+
+@media (min-width: 1440px) {
+    #gender-selector label{
+        padding: 16px;
+        height: auto;
+    }
+
+    #gender-selector label img {
+        transform: scale(1);
+    }
+}

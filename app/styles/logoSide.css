@@ -1,0 +1,115 @@
+#logo-side {
+    background: linear-gradient(to bottom, #0EBE74, #0A8D56);
+    color:  white;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding: 5vh 5vw;
+    width: 55%;
+    position: relative;
+    height: 100vh;
+}
+
+#logo, .apps img {
+    width: 9vw;
+}
+
+#learn-enjoy {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    line-height: 50px;
+    font-size: 28px;
+    letter-spacing: 0%;
+    text-align: right;
+    padding: 0;
+}
+
+#learn-enjoy span {
+    font-weight: 900;
+    padding: 0;
+}
+
+#signup-parag {
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.apps {
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+}
+
+.people-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    bottom: 0;
+    left: 2%;
+}
+
+#woman {
+    width: 145px;
+    height: 250px;
+}
+
+#man {
+    position: absolute;
+    bottom: 0;
+    left: 52%;
+    z-index: 10;
+    width: 145px;
+    height: 274px;
+}
+
+@media (max-width: 768px) {
+    #logo-side {
+        width: 100%;
+        padding: 5% 5% 5% 5%;
+        height: 40vh;
+        gap: 25px;
+    }
+
+    #woman, #man {
+        transform: scale(0.6);
+        transform-origin: bottom left;
+    }
+
+    #man {
+        left: 30%;
+    }
+
+    #logo {
+        width: 20%;
+    }
+
+    .apps img {
+        width: 50%;
+    }
+
+    #learn-enjoy {
+        font-size: 5vw;
+        line-height: 185%;
+    }
+
+    .apps {
+        width: 45%;
+        gap: 4%;
+    }
+}
+
+@media (min-width: 1440px) {
+    #woman, #man {
+        transform: scale(1.5);
+        transform-origin: bottom left;
+        bottom: 0;
+    }
+
+    #man {
+        left: 75%;
+    }
+}

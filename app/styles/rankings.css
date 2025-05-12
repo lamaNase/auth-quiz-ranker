@@ -1,0 +1,285 @@
+#rankings-page {
+    background-color: black;
+    height: 100vh;
+    align-items: center;
+}
+
+#rankings-page img {
+    position: absolute;
+    bottom: 0;
+    right: 12.45%;
+    width: 8%;
+    height: 65%;
+}
+
+#rankings-content {
+    background: linear-gradient(to bottom, #19714D, #FFFFFF);
+    width: 64vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17vh;
+    padding: 1%;
+}
+
+#rankings-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+#rankings-header header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5%;
+}
+
+#rankings-header header span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    color: white;
+}
+
+#rankings-header header a,
+#rankings-header header button {
+    /* Base appearance */
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0098F8;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(242, 242, 247, 0.95) 100%);
+    border: 1px solid #26A670;
+    border-radius: 10px;
+
+    /* 3D “push” effect */
+    box-shadow:
+        0 5px 0 #26A670,
+        /* solid “base” under the button */
+        0 8px 15px rgba(0, 0, 0, 0.2);
+    /* soft drop shadow */
+
+    transition:
+        transform 0.1s ease-in-out,
+        box-shadow 0.1s ease-in-out,
+        background 0.2s ease;
+}
+
+/* Hover makes the button lift slightly */
+#rankings-header header a:hover,
+#rankings-header header button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 7px 0 #26A670,
+        0 10px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(to bottom, #f8f8f8 0%, rgba(242, 242, 247, 1) 100%);
+}
+
+/* Active (pressed) state insets the shadow and pushes down */
+#rankings-header header a:active,
+#rankings-header header button:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 3px 0 #26A670,
+        /* reversed inset for base */
+        0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(242, 242, 247, 1) 0%, #e6e6ea 100%);
+}
+
+.cards {
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+#rank1,
+#rank2,
+#rank3 {
+    position: relative;
+    opacity: 0.1;
+    animation: flip-pop 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+#rank1 {
+    top: -25%;
+    animation-delay: 0s;
+}
+
+#rank2 {
+    animation-delay: 0.5s;
+}
+
+#rank3 {
+    animation-delay: 1s;
+}
+
+@keyframes flip-pop {
+    0% {
+        transform: perspective(600px) rotateY(90deg) scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: perspective(600px) rotateY(-15deg) scale(1.05);
+        opacity: 1;
+    }
+
+    75% {
+        transform: perspective(600px) rotateY(-5deg) scale(1.02);
+        opacity: 1;
+    }
+
+    100% {
+        transform: perspective(600px) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+#rank1:hover,
+#rank2:hover,
+#rank3:hover {
+    animation: flip-pop-hover 2s ease forwards;
+}
+
+@keyframes flip-pop-hover {
+    0% {
+        transform: perspective(600px) rotateY(0deg) scale(1);
+    }
+
+    50% {
+        transform: perspective(600px) rotateY(15deg) scale(1.1);
+    }
+
+    75% {
+        transform: perspective(600px) rotateY(5deg) scale(1.05);
+    }
+
+    100% {
+        transform: perspective(600px) rotateY(0deg) scale(1);
+    }
+}
+
+#ranking-list {
+    align-self: center;
+    list-style: none;
+    width: 98%;
+    margin-left: auto;
+    max-height: 50%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking-list-item,
+.highlight {
+    border: solid 3px #F4F4F4;
+    display: flex;
+    align-items: center;
+    padding: 0.75%;
+    justify-content: space-between;
+}
+
+.name-points div {
+    width: 50%;
+    display: flex;
+    gap: 10%;
+}
+
+.name-points {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ranking-list-item {
+    background-color: rgba(242, 242, 247, 0.9);
+    border: solid 3px #F4F4F4;
+    color: black;
+}
+
+.highlight {
+    background-color: #0098F8;
+    border: solid 3px #007087;
+    color: white;
+}
+
+.highlight a {
+    /* Base styling */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #14d887 0%, #0ebe74 100%);
+    border: 1px solid #0aa15e;
+    border-radius: 6px;
+
+    /* 3D “lifted” effect */
+    box-shadow:
+        0 4px 0 #0aa15e,
+        /* solid base */
+        0 6px 12px rgba(0, 0, 0, 0.15);
+    /* soft drop shadow */
+
+    transition:
+        transform 0.1s ease-in-out,
+        box-shadow 0.1s ease-in-out,
+        background 0.2s ease;
+}
+
+/* Hover state: slightly lift */
+.highlight a:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 0 #0aa15e,
+        0 8px 15px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(to bottom, #16e89b 0%, #12c66d 100%);
+}
+
+/* Active (pressed) state: inset shadow, pushed down */
+.highlight a:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 3px 0 #0aa15e,
+        0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #0ebe74 0%, #0aa15e 100%);
+}
+
+.ranking-list-item span,
+.highlight span {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@media (max-width: 750px) {
+    #rankings-page img {
+        position: absolute;
+        bottom: 0;
+        right: 2%;
+        width: 15%;
+        height: 65%;
+    }
+
+    #rankings-content {
+        width: 75%;
+    }
+
+    #ranking-list {
+        width: 100%;
+    }
+    
+    .ranking-list-item span,
+    .highlight span, .highlight a{
+        font-size: 15%;
+    }
+}
