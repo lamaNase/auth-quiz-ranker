@@ -24,7 +24,7 @@ Get a quick overview of the app’s functionality and UI in action:
 
 You can try the live version of the app here:
 
-🚀 [Live on Netlify](https://tafawq-quiz.netlify.app)
+🚀 [Live on Netlify](https://tafawq-quiz-app.netlify.app/)
 
 > No installation required — explore the full experience in your browser!
 
