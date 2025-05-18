@@ -17,7 +17,7 @@
     transform: rotateX(20deg) rotateY(-20deg);
     transition: transform 0.3s ease;
 }
-
+/*
 .winner-card::before {
     content: "";
     position: absolute;
@@ -32,7 +32,6 @@
     transform-origin: top;
 }
 
-/* Side (right) face */
 .winner-card::after {
     content: "";
     position: absolute;
@@ -46,7 +45,7 @@
     transform: rotateY(90deg) translateZ(75px);
     transform-origin: right;
 }
-
+*/
 .winner-rank {
     position: absolute;
     top: -25px;
@@ -85,16 +84,16 @@
     font-size: 14px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 750px) { 
     .winner-card {
-        width: 120px;
-        height: 130px;
-        padding: 2rem 1rem;
+        scale: 0.75;
     }
+}
 
-    
-
-    .winner-rank, .winner-name, .winner-points {
-        font-size: 14px;
+@media (max-width: 450px) { 
+    .winner-card {
+        scale: 0.65;
+        margin: 0;
+        width: 400px;
     }
 }

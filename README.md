@@ -1,68 +1,37 @@
-# Welcome to Remix!
+# 💡 Tafawq Quiz App
 
-- [Remix Docs](https://remix.run/docs)
-- [Netlify Functions Overview](https://docs.netlify.com/functions/overview)
+[![Remix](https://img.shields.io/badge/Built%20with-Remix-blueviolet?logo=remix&logoColor=white)](https://remix.run/)
+[![Made with 💙](https://img.shields.io/badge/Made%20with-%F0%9F%92%99-blue)](https://github.com/)
+[![License](https://img.shields.io/badge/License-MIT-brightgreen)](#license)
 
-## Netlify Setup
+## 🧠 Overview
 
-1. Install the [Netlify CLI](https://docs.netlify.com/cli/get-started/):
+**Tafawq Quiz App** is an interactive, Arabic-language educational web app built with the [Remix](https://remix.run/) framework. It allows users to practice multiple-choice questions, view immediate feedback, and read detailed explanations for each answer. The app supports user sessions, score tracking, and dynamic question status updates.
 
-```sh
-npm i -g netlify-cli
-```
+---
 
-If you have previously installed the Netlify CLI, you should update it to the latest version:
+## 🎬 Promo Video
 
-```sh
-npm i -g netlify-cli@latest
-```
+Get a quick overview of the app’s functionality and UI in action:
 
-2. Sign up and log in to Netlify:
+👉 [Watch the Promo Video on YouTube](https://www.youtube.com/watch?v=your-promo-video-id)
 
-```sh
-netlify login
-```
+> The video showcases answering questions, viewing explanations, and the responsive RTL Arabic interface.
 
-3. Create a new site:
+---
 
-```sh
-netlify init
-```
+## 🌐 Live Demo on Netlify
 
-## Development
+You can try the live version of the app here:
 
-Ensure all packages are installed by running:
+🚀 [Live on Netlify](https://tafawq-quiz.netlify.app)
 
-```sh
-npm install
-```
+> No installation required — explore the full experience in your browser!
 
-Run
 
-```sh
-netlify dev
-```
+...
 
-Open up [http://localhost:8888](http://localhost:8888), and you're ready to go!
+## 🙌 Acknowledgements
 
-### Serve your site locally
-
-To serve your site locally in a production-like environment, run
-
-```sh
-netlify serve
-```
-
-Your site will be available at [http://localhost:8888](http://localhost:8888). Note that it will not auto-reload when you make changes.
-
-## Deployment
-
-There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
-
-```sh
-# preview deployment
-netlify deploy --build
-
-# production deployment
-netlify deploy --build --prod
-```
+- Special thanks to **Remix.run** for its amazing SSR-first approach.
+- Thanks to mentors and team members who guided development.

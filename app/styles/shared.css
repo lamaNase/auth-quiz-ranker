@@ -152,6 +152,161 @@ button:hover {
   box-shadow: inset 0 3px 0 #2980b9, 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.main-header {
+  background-color: white;
+  width: 100%;
+  padding: 1% 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header img {
+  width: 92px;
+  height: 40px;
+}
+
+.headerButton {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px 8px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerButton img {
+  width: 24px;
+  height: 24px;
+}
+
+.headerButton p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #8E8E8E;
+}
+
+.headerButton:hover {
+  background-color: #DDF4FF;
+  border: solid 1px #84D7FF;
+  cursor: pointer;
+}
+
+#header-btns {
+  width: 57%;
+}
+
+.headerButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.left-side {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  padding: 0;
+  width: 38px;
+  height: 40px;
+}
+
+.user-points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: #FFE5C2;
+}
+
+.user-points img {
+  width: 16px;
+  height: 24px;
+}
+
+.user-points span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #BD6D00;
+}
+
+.rectangle {
+  padding: 0;
+  width: 2px;
+  height: 31px;
+  border-radius: 999px;
+  background-color: #E5E5E5;
+}
+
+.menue {
+  position: relative;
+}
+
+.menue ul {
+  list-style: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  height: 65px;
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.kebab-icon {
+  margin: 0;
+  padding: 0;
+  width: 26px;
+  height: 24px;
+}
+
+.kebab-icon:hover {
+  cursor: pointer;
+  background-color: #f9f3f3;
+}
+
+.menue ul a,
+.menue ul form {
+  width: 100%;
+}
+
+.menue ul a,
+.menue ul button {
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 5% 10%;
+  width: 100%;
+}
+
+.menue ul a:hover,
+.menue ul button:hover {
+  background-color: #0A8D56;
+  color: white;
+}
+
 /* Pop-in keyframes for icon */
 @keyframes icon-pop {
   0% {
@@ -166,5 +321,47 @@ button:hover {
 
   100% {
     transform: scale(1) rotate(0);
+  }
+}
+
+@media (max-width: 750px) {
+  #header-btns {
+    display: none;
+  }
+
+  .left-side {
+    width: 30%;
+  }
+}
+
+@media (max-width: 450px) {
+  #header-btns {
+    display: none;
+  }
+
+  .left-side {
+    width: 50%;
+  }
+
+  .main-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .modal {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+  }
+
+  .close-button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 40%;
+    font-size: 0.8rem;
   }
 }

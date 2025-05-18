@@ -1,11 +1,28 @@
 import { Form, Link, redirect, useActionData, useNavigation, useParams, useSearchParams } from "@remix-run/react";
-import { useDebugValue } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'; // Make sure this is present!
 import LogoSide from "~/components/headers/logoSide";
 import { login, signup, validateUserData, validateUserPhoneNumber } from "~/data/users.server";
 import "~/styles/auth.css";
+
+export function meta({ location }) {
+  const searchParams = new URLSearchParams(location.search);
+  const mode = searchParams.get("mode") || "login";
+
+  return [
+    {
+      title: mode === "signup" ? "إنشاء حساب باستخدام رقم الهاتف" : "تسجيل الدخول باستخدام رقم الهاتف",
+    },
+    {
+      name: "description",
+      content:
+        mode === "signup"
+          ? "أنشئ حسابك عبر رقم الجوال واختر شخصيتك المفضلة في خطوات بسيطة."
+          : "قم بتسجيل الدخول بسرعة باستخدام رقم الجوال فقط، بدون كلمة مرور.",
+    },
+  ];
+}
 
 export default function PhoneNumberRegisteration() {
   const [searchParams] = useSearchParams();

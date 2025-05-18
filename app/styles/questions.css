@@ -92,12 +92,12 @@
 
 .markers {
     display: flex;
-    gap: 25px;
     align-items: center;
-    justify-content: center;
     margin-top: 1rem;
-    flex-wrap: wrap;
     direction: rtl;
+    padding-right: 1rem;
+    width: 80%;
+    justify-content: space-between;
 }
 
 .marker {
@@ -160,6 +160,9 @@
     border-radius: 12px;
     font-weight: 700;
     font-size: 24px;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+    /* subtle push shadow */
 }
 
 #prev {
@@ -175,6 +178,12 @@
     border-bottom: solid 3px #8E8E8E;
 }
 
+#prev:active {
+    transform: translateY(2px);
+    border-bottom: solid 1px #8E8E8E;
+    box-shadow: none;
+}
+
 #next {
     color: white;
     background-color: #0A8D56;
@@ -188,13 +197,21 @@
     border-bottom: solid 3px #0EbE74;
 }
 
+#next:active {
+    transform: translateY(2px);
+    border-bottom: solid 1px #0EbE74;
+    box-shadow: none;
+}
+
+
 .confirm-dialog {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 0.8rem 2rem;
-    gap: 5rem;
+    gap: 2rem;
+    /* Reduced from 5rem for better spacing with warning text */
 }
 
 .confirm-title {
@@ -202,6 +219,20 @@
     font-weight: 600;
     color: #333;
     margin: 0;
+}
+
+/* New: warning text for unanswered questions */
+.unanswered-warning {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #d9534f;
+    background-color: #fff3f3;
+    border: 1px solid #f5c6cb;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 6px rgba(217, 83, 79, 0.15);
 }
 
 .confirm-actions {
@@ -377,4 +408,175 @@
     background-color: #f9f9f9;
     padding: 0.75rem;
     border-radius: 5px;
+}
+
+.show-questions-list {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #questions-header {
+        display: none;
+    }
+
+    #questions-page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #question-side {
+        padding: 5%;
+    }
+
+    #question-side div p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+    }
+
+    .show-questions-list {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+
+    #questions-page footer {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.6rem;
+        margin-top: 3rem;
+    }
+
+    #questions-page footer a,
+    #questions-page footer button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    #question-side,
+    #questionForm {
+        width: 100%;
+    }
+
+    #questionForm h1 {
+        font-size: 16px;
+    }
+
+    #question-choices {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #question-choices label {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .question-feedback {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .question-feedback p,
+    .question-feedback p span,
+    .question-feedback button,
+    .question-feedback button span {
+        font-size: 14px;
+    }
+
+    .question-feedback p {
+        padding-top: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .question-feedback button {
+        padding: 2px;
+    }
+
+    .questions-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+        column-gap: 0.5rem;
+        width: 100%;
+        padding: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        align-self: center;
+    }
+
+    .questions-nav ul li {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: solid 1px #1A384B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .questions-nav ul li a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        color: #1A384B;
+    }
+
+    .questions-nav ul li a.correct,
+    .questions-nav ul li a.wrong {
+        color: white;
+    }
+
+    .questions-nav ul li:has(a.correct) {
+        background-color: #0EBE74;
+        border: none;
+    }
+
+    .questions-nav ul li:has(a.wrong) {
+        background-color: #EA0F4D;
+        border: none;
+    }
+
+    .questions-nav ul li:has(a.active) {
+        background-color: #D9D9D9;
+        border: none;
+    }
+
+    .confirm-dialog {
+        padding: 0.5rem;
+    }
+
+    .confirm-title {
+        font-size: 1rem;
+    }
+
+    .unanswered-warning {
+        font-size: 0.6rem;
+    }
+
+    .confirm-actions .btn-stay,
+    .confirm-actions .btn-finish {
+        padding: 0.5rem;
+        width: 55%;
+        font-size: 0.7rem;
+    }
+
+    .question-title {
+        font-size: 1rem;
+    }
+
+    .answer-explanation-text h3 {
+        font-size: 0.9rem;
+    }
+
+    .correct-answer-box {
+        font-size: 0.7rem;
+    }
 }

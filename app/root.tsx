@@ -62,6 +62,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+        <link rel="icon" href="/images/tafawqLogo.svg" type="image/x-icon" />
         <Links />
       </head>
       <body>

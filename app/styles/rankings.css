@@ -1,10 +1,15 @@
 #rankings-page {
-    background-color: black;
-    height: 100vh;
+    background-color: #1A384B;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 3vh;
+    width: 100%;
+    height: auto;
+    position: relative;
 }
 
-#rankings-page img {
+.gender {
     position: absolute;
     bottom: 0;
     right: 12.45%;
@@ -15,88 +20,24 @@
 #rankings-content {
     background: linear-gradient(to bottom, #19714D, #FFFFFF);
     width: 64vw;
-    height: 100vh;
+    height: auto;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 17vh;
-    padding: 1%;
+    gap: 13vh;
+    padding: 5% 1%;
 }
 
-#rankings-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-}
-
-#rankings-header header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5%;
-}
-
-#rankings-header header span {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0%;
-    color: white;
-}
-
-#rankings-header header a,
-#rankings-header header button {
-    /* Base appearance */
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #0098F8;
-    text-decoration: none;
-    background: linear-gradient(to bottom, #ffffff 0%, rgba(242, 242, 247, 0.95) 100%);
-    border: 1px solid #26A670;
-    border-radius: 10px;
-
-    /* 3D “push” effect */
-    box-shadow:
-        0 5px 0 #26A670,
-        /* solid “base” under the button */
-        0 8px 15px rgba(0, 0, 0, 0.2);
-    /* soft drop shadow */
-
-    transition:
-        transform 0.1s ease-in-out,
-        box-shadow 0.1s ease-in-out,
-        background 0.2s ease;
-}
-
-/* Hover makes the button lift slightly */
-#rankings-header header a:hover,
-#rankings-header header button:hover {
-    transform: translateY(-2px);
-    box-shadow:
-        0 7px 0 #26A670,
-        0 10px 20px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(to bottom, #f8f8f8 0%, rgba(242, 242, 247, 1) 100%);
-}
-
-/* Active (pressed) state insets the shadow and pushes down */
-#rankings-header header a:active,
-#rankings-header header button:active {
-    transform: translateY(2px);
-    box-shadow:
-        inset 0 3px 0 #26A670,
-        /* reversed inset for base */
-        0 2px 5px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, rgba(242, 242, 247, 1) 0%, #e6e6ea 100%);
+#rankings-page footer {
+    display: none;
 }
 
 .cards {
+    padding-top: 4%;
     display: flex;
     gap: 2%;
     justify-content: center;
-    align-items: center;
 }
 
 #rank1,
@@ -108,7 +49,7 @@
 }
 
 #rank1 {
-    top: -25%;
+    top: -35px;
     animation-delay: 0s;
 }
 
@@ -262,24 +203,107 @@
 }
 
 @media (max-width: 750px) {
-    #rankings-page img {
-        position: absolute;
-        bottom: 0;
-        right: 2%;
-        width: 15%;
-        height: 65%;
+    .cards {
+        gap: 1px;
+    }
+
+    #rankings-page {
+        width: 100%;
+        margin: 0;
+    }
+
+    #rankings-page footer {
+        width: 100%;
+        display: flex;
+        height: auto;
     }
 
     #rankings-content {
-        width: 75%;
+        padding: 10px;
+        padding-top: 10%;
+        margin-top: 40px;
+        width: 80%;
+    }
+
+    .gender {
+        scale: 1.5;
+        right: 5%;
+        bottom: -2.5%;
+    }
+
+    .headerButtons {
+        width: 100%;
     }
 
     #ranking-list {
+        scale: 0.8;
+        width: 110%;
+        padding: 0;
+        align-self: center;
+        margin-left: 10px;
+    }
+
+    .ranking-list-item,
+    .highlight {
+        width: 100%;
+
+    }
+}
+
+@media (max-width: 450px) {
+    #rankings-page footer {
+        width: 100%;
+        display: flex;
+        height: 0;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    #rankings-content {
+        padding: 1%;
+        padding-top: 10%;
+        margin-top: 40px;
+        width: 90%;
+    }
+
+    .gender {
+        scale: 1.75;
+        right: 1%;
+        bottom: 0;
+    }
+
+    .headerButton {
+        scale: 0.5;
+    }
+
+    .headerButtons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+    }
+
+    #ranking-list {
+        scale: 0.7;
+        width: 120%;
+        padding: 0;
+        align-self: center;
+        
+    }
+
+    .ranking-list-item,
+    .highlight {
         width: 100%;
     }
-    
-    .ranking-list-item span,
-    .highlight span, .highlight a{
-        font-size: 15%;
+
+    #ranking-list span, #ranking-list a {
+        font-size: 11px;
+    }
+
+    .cards {
+        display: flex;
+        gap: 0;
+        width: 100%;
+        justify-content: center;
     }
 }

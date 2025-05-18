@@ -3,6 +3,9 @@ import RankingList from "~/components/rankings/rankingList";
 import WinnerCard from "~/components/winnerCard";
 import { getAllUserScores, getUserFromSession, getUserGender } from "~/data/users.server";
 import "~/styles/rankings.css";
+import MainHeader from "~/components/headers/mainHeader/mainHeader";
+import HeaderButtons from "~/components/headers/mainHeader/headerButtons";
+
 
 export default function Index() {
     const loaderData = useLoaderData();
@@ -16,45 +19,34 @@ export default function Index() {
 
     return (
         <main id="rankings-page">
+            < MainHeader
+                userPoints={userId !== null ? scores.find(score => score.id === userId)?.score : 0}
+                userId={userId}
+            />
             <div id="rankings-content">
-                <div id="rankings-header">
-                    <header>
-                        {userId === null && <Link to="/auth">
-                            تسجيل الدخول
-                        </Link>}
-                        {userId !== null && <Form method="post" action="/logout">
-                            <button>تسجيل الخروج</button>
-                        </Form>}
-                        {userId !== null && (
-                            <span>
-                                نقاطك: {scores.find(score => score.id === userId)?.score ?? 0}
-                            </span>
-                        )}
-                    </header>
-                    <div className="cards">
-                        {orderedTop3.map((winner, i) => (
-                            <WinnerCard
-                                key={winner.id}
-                                id={`rank${i === 1 ? 1 : i === 0 ? 2 : 3}`}
-                                rank={i === 1 ? 1 : i === 0 ? 2 : 3}
-                                firstName={winner.firstName}
-                                lastName={winner.lastName}
-                                points={winner.score}
-                                bgColor={
-                                    i === 1
-                                        ? "#7C42B3" // center (Rank 1)
-                                        : i === 0
-                                            ? "#B41C75" // right (Rank 2)
-                                            : "linear-gradient(to bottom, #FF9500, #FEC700)" // left (Rank 3)
-                                }
-                            />
-                        ))}
-                    </div>
+                <div className="cards">
+                    {orderedTop3.map((winner, i) => (
+                        <WinnerCard
+                            key={winner.id}
+                            id={`rank${i === 1 ? 1 : i === 0 ? 2 : 3}`}
+                            rank={i === 1 ? 1 : i === 0 ? 2 : 3}
+                            firstName={winner.firstName}
+                            lastName={winner.lastName}
+                            points={winner.score}
+                            bgColor={
+                                i === 1
+                                    ? "#7C42B3" // center (Rank 1)
+                                    : i === 0
+                                        ? "#B41C75" // right (Rank 2)
+                                        : "linear-gradient(to bottom, #FF9500, #FEC700)" // left (Rank 3)
+                            }
+                        />
+                    ))}
                 </div>
                 < RankingList list={scores} currentUserId={userId} />
             </div>
             {gender && (
-                <img
+                <img className="gender"
                     src={
                         gender === "female"
                             ? "images/woman.svg"
@@ -63,6 +55,9 @@ export default function Index() {
                     alt={gender === "female" ? "woman icon" : "man icon"}
                 />
             )}
+            <footer>
+                < HeaderButtons />
+            </footer>
         </main>
     );
 }

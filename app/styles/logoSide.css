@@ -71,16 +71,16 @@
         width: 100%;
         padding: 5% 5% 5% 5%;
         height: 40vh;
-        gap: 25px;
+        gap: 0.5rem;
     }
 
     #woman, #man {
-        transform: scale(0.6);
+        transform: scale(0.5);
         transform-origin: bottom left;
     }
 
     #man {
-        left: 30%;
+        left: 25%;
     }
 
     #logo {
@@ -96,7 +96,13 @@
         line-height: 185%;
     }
 
+    #signup-parag {
+        font-size: 11px;
+        display: inline;
+    }
+
     .apps {
+        margin-top: 30px;
         width: 45%;
         gap: 4%;
     }

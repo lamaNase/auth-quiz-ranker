@@ -3,6 +3,24 @@ import { FaFacebook, FaGoogle, FaTelegram } from "react-icons/fa";
 import LogoSide from "~/components/headers/logoSide";
 import "~/styles/auth.css";
 
+export function meta({ location }) {
+  const searchParams = new URLSearchParams(location.search);
+  const mode = searchParams.get("mode") || "login";
+
+  return [
+    {
+      title: mode === "signup" ? "إنشاء حساب جديد" : "تسجيل الدخول",
+    },
+    {
+      name: "description",
+      content:
+        mode === "signup"
+          ? "أنشئ حسابك باستخدام رقم الهاتف أو عبر تيليغرام، جوجل، أو فيسبوك."
+          : "سجّل الدخول إلى حسابك بسهولة باستخدام رقم الهاتف أو حسابات التواصل الاجتماعي.",
+    },
+  ];
+}
+
 export default function AuthunticationPage() {
   const [searchParams] = useSearchParams();
   const mode = searchParams.get("mode") || "login";
@@ -19,30 +37,30 @@ export default function AuthunticationPage() {
           <li><Link to="/">
             < FaTelegram />
             <span
-            >{mode === "signup"? "إنشاء حساب": "الدخول"} من خلال تيليغرام
+            >{mode === "signup" ? "إنشاء حساب" : "الدخول"} من خلال تيليغرام
             </span>
           </Link></li>
           <li><Link to="/">
             < FaGoogle />
             <span>
-            {mode === "signup"? "إنشاء حساب": "الدخول"} من خلال جوجل
+              {mode === "signup" ? "إنشاء حساب" : "الدخول"} من خلال جوجل
             </span>
           </Link></li>
           <li><Link to="/">
             < FaFacebook />
             <span>
-              {mode === "signup"? "إنشاء حساب": "الدخول"} من خلال فيسبوك
+              {mode === "signup" ? "إنشاء حساب" : "الدخول"} من خلال فيسبوك
             </span>
           </Link></li>
           <p>أو</p>
           <li><Link to={"/register-phone-number" + "?mode=" + mode}>
             <span>
-              {mode === "signup"? "إنشاء حساب": "الدخول"} من خلال رقم الهاتف 
+              {mode === "signup" ? "إنشاء حساب" : "الدخول"} من خلال رقم الهاتف
             </span>
           </Link></li>
         </ul>
       </section>
-      < LogoSide parag={mode}/>
+      < LogoSide parag={mode} />
     </main>
   );
 }

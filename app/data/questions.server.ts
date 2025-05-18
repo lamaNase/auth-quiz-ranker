@@ -47,9 +47,7 @@ export async function getQuestionById(id) {
     const res = await fetch(`${process.env.BASE_URL}/questions/${id}.json`);
     if (!res.ok) {
         if (res.status === 404) return null;
-        throw new Error(
-            "The requested question does not exist!"
-        );
+
     }
     return await res.json();
 }

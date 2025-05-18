@@ -8,6 +8,23 @@ import { MdFormatAlignRight } from "react-icons/md";
 import Modal from "~/components/utils/Modal";
 import QuestionExplination from "~/components/questions/questionsExplination";
 
+export function meta({ data }) {
+    if (!data) {
+        return [
+            { title: "السؤال" },
+            { name: "description", content: "أجب على السؤال المعروض وتحقق من مدى صحة إجابتك." }
+        ];
+    }
+
+    return [
+        { title: `السؤال: ${data.text}` },
+        {
+            name: "description",
+            content: "اختر الإجابة الصحيحة لهذا السؤال وتعرف على شرح مفصل بعد اختيارك.",
+        },
+    ];
+}
+
 export default function Question() {
     const question = useLoaderData();
     const [selectedChoice, setSelectedChoice] = useState();
@@ -109,10 +126,10 @@ export async function loader(request) {
         const question = await getQuestionById(id);
         if (!question) {
             throw new Response(
-                "Question #"+ questionId +" Not Found", {
-                    status: 404,
-                    statusText:  "Not Found"
-                });
+                "Question #" + questionId + " Not Found", {
+                status: 404,
+                statusText: "Not Found"
+            });
         }
         // Get status and selected answer
         const { status, selectedAnswer } = await getQuestionStatus(userId, questionId);
