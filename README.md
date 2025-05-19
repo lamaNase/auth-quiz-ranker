@@ -1,7 +1,6 @@
 # 💡 Tafawq Quiz App
 
 [![Remix](https://img.shields.io/badge/Built%20with-Remix-blueviolet?logo=remix&logoColor=white)](https://remix.run/)
-[![Made with 💙](https://img.shields.io/badge/Made%20with-%F0%9F%92%99-blue)](https://github.com/)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen)](#license)
 
 ## 🧠 Overview
