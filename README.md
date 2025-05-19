@@ -14,7 +14,9 @@
 
 Get a quick overview of the app’s functionality and UI in action:
 
-👉 [Watch the Promo Video on YouTube](https://www.youtube.com/watch?v=your-promo-video-id)
+
+https://github.com/user-attachments/assets/939c85da-fc44-412b-bf4d-1c6cfb2cd50a
+
 
 > The video showcases answering questions, viewing explanations, and the responsive RTL Arabic interface.
 
