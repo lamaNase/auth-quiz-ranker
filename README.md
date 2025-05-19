@@ -5,7 +5,7 @@
 
 ## 🧠 Overview
 
-**Tafawq Quiz App** is an interactive, Arabic-language educational web app built with the powerful [Remix](https://remix.run/) framework. It is deployed on [Netlify](https://www.netlify.com/) and uses [Firebase](https://firebase.google.com/) for backend data storage, including user sessions, question content, and progress tracking. The app allows users to practice multiple-choice questions, receive immediate feedback, view detailed explanations for each answer, and monitor their scores as they learn — all within a right-to-left (RTL), culturally adapted interface designed specifically for Arabic speakers.
+**Tafawq Quiz App** is an interactive, Arabic-language educational web app built with the powerful [Remix](https://remix.run/) framework. It is deployed on [Netlify](https://www.netlify.com/) and uses [Firebase](https://firebase.google.com/) for backend data storage, including user sessions, question content, and progress tracking. The app features full user authentication (sign up/sign in), utilizes cookies for managing user sessions, and supports dynamic question status updates. Users can practice multiple-choice questions, receive immediate feedback, view detailed answer explanations, and monitor their scores — all within a culturally adapted, right-to-left (RTL) interface tailored for Arabic-speaking learners.
 
 ---
 
